@@ -1,0 +1,149 @@
+<%- include('partials/header.ejs'); -%>
+  <div class="add-sku">
+    <h1 style="text-decoration: underline">מערכת למעקב חוסרים</h1>
+    <form class="box" action="/add" method="post">
+       <input type="text" id="skuInput" name="newSku" placeholder="נא הזן מק''ט כאן" />
+      <button class="addbtn" type="submit">הוסף מק"ט לרשימה</button>
+    </form>
+  </div>
+  <div class="table-container">
+    <table class="sku-table">
+      <thead>
+        <tr>
+          <th>מק"ט</th>
+          <th>תאריך הוספת מק"ט</th>
+          <th>הוזמן</th>
+          <th>הוזמן בתאריך</th>
+          <th>הגיע</th>
+          <th>הגיע בתאריך</th>
+          <th>מחיקה</th>
+        </tr>
+      </thead>
+    <tbody>
+      <% for(let sku_code of listsku){%>
+      <tr class="sku">
+        <td id="sku_code<%=sku_code.id%>">
+          <%= sku_code.sku_code %>
+        </td>
+        <td id="date_added<%=sku_code.id%>">
+          <% if (sku_code.date_added) { %>
+            <%= new Date(sku_code.date_added).toLocaleDateString('en-GB') %>
+          <% } %>
+        </td>
+        <td>
+          <form id="orderForm<%= sku_code.id %>" action="/updateDateOrder" method="post">
+            <input type="checkbox" name="dateOrderChecked" onchange="handleSubmit(this)" data-form-id="orderForm<%= sku_code.id %>" <% if (sku_code.ordered) { %> checked <% } %>>
+            <input type="hidden" name="updatedskuId" value="<%= sku_code.id %>">
+          </form>
+        </td>
+        <td id="order<%=sku_code.id%>">
+          <% if (sku_code.order_date) { %>
+            <%= sku_code.order_date.toLocaleDateString('en-GB') %>
+          <% } %>
+        <td>
+          <form id="arrivalForm<%= sku_code.id %>" action="/updateDateArrival" method="post">
+            <input type="checkbox" name="dateArrivalChecked" onchange="handleSubmit(this)" data-form-id="arrivalForm<%= sku_code.id %>" <% if (sku_code.arrived) { %> checked <% } %>>
+            <input type="hidden" name="updatedskuId2" value="<%= sku_code.id %>">
+          </form>
+        </td>
+        <td id="arrival_date<%=sku_code.id%>">
+          <% if (sku_code.arrival_date) { %>
+            <%= sku_code.arrival_date.toLocaleDateString('en-GB') %>
+          <% } %>
+        </td>
+        <td>
+          <form action="/delete" method="post" onsubmit="return confirmDelete()">
+            <input type="hidden" name="deleteskuId" value="<%= sku_code.id %>">
+            <button class="delete-btn" type="submit">מחיקה</button>
+          </form
+        </td>
+    <% } %>
+  </tbody>
+</table>
+<table class="button-table">
+  <tbody>
+    <tr>
+      <td colspan="7" style="text-align: center;">
+        <button class="export-btn" onclick="exportToExcel()">Export to Excel</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<script>
+  function handleSubmit(checkbox) {
+    const formId = checkbox.getAttribute("data-form-id");
+    const form = document.getElementById(formId);
+
+    form.submit();    
+  }     
+
+</script>
+<script>
+  function exportToExcel() {
+    const table = document.querySelector('.sku-table');
+    const tableData = [];
+
+    // Define the indices of the columns you want to export
+    const columnIndices = {
+        'מק"ט': -1,
+        'תאריך הוספת מק"ט': -1,
+        'הוזמן בתאריך': -1,
+        'הגיע בתאריך': -1
+    };
+
+    // Get table headers (titles)
+    const headers = [];
+    table.querySelectorAll('thead th').forEach((header, index) => {
+        const headerText = header.textContent.trim();
+        if (headerText in columnIndices) {
+            columnIndices[headerText] = index;
+            headers.push(headerText);
+        }
+    });
+    tableData.push(headers);
+
+    // Get table rows
+    table.querySelectorAll('tbody tr').forEach(row => {
+        const rowData = [];
+
+        // Get data from selected columns in the row
+        for (const column of Object.values(columnIndices)) {
+            if (column !== -1) {
+                const cell = row.querySelectorAll('td')[column];
+                rowData.push(cell.textContent.trim());
+            }
+        }
+
+        // Push row data to table data array
+        tableData.push(rowData);
+    });
+
+    // Create a worksheet from the table data
+    const worksheet = XLSX.utils.aoa_to_sheet(tableData);
+
+    // Create a new workbook and add the worksheet
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+
+    // Save the workbook as an Excel file
+    XLSX.writeFile(workbook, 'table.xlsx');
+}
+</script>
+<script>
+  function confirmDelete() {
+    return confirm('בטוח שברצונך למחוק את המק"ט מהרשימה?');
+  }
+</script>
+
+<%- include('partials/footer.ejs'); -%>
+
+
+
+
+  
+
+
+
