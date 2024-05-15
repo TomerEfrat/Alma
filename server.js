@@ -6,10 +6,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const db = new pg.Client({
-   user: "postgres",
-   host: "localhost",
-   database: "Alma-Deficiency tracking",
-   password: "Alma1234",
+   user: "alma_db_user",
+   host: "dpg-cp255ien7f5s73fb0l10-a.frankfurt-postgres.render.com",
+   database: "alma_db",
+   password: "YcKw6ps7C8J2NDUSPczmoGTgzedXzdJt",
    port: 5432,
 });
 db.connect();
@@ -64,9 +64,6 @@ app.post("/updateDateOrder", async (req, res) => {
      console.log(err);
    }
 });
-
-
-
 
 app.post("/updateDateArrival", async (req, res) => {
   const arrived  = req.body.dateArrivalChecked;
