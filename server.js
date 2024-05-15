@@ -11,6 +11,7 @@ const db = new pg.Client({
    database: "alma_db",
    password: "YcKw6ps7C8J2NDUSPczmoGTgzedXzdJt",
    port: 5432,
+   ssl: { rejectUnauthorized: false }
 });
 db.connect();
 
