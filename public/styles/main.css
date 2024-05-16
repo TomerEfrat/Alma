@@ -1,37 +1,50 @@
 /* Reset CSS */
+
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
-
-/* Header */
-header {
-  position: relative;
-  height: 200px;
-}
-
-header img {
-  position: absolute;
+.img-container {
+  /* Ensure the container takes up the entire viewport */
+  position: top;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image covers the entire header */
+  right: 0;
+  bottom: 0;
+  /* Center the image horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Limit the size of the image to fit within the container */
+  max-width: 100%; /* Adjust as needed */
+  padding: 20px;
 }
-.table-container {
-  max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+.img-container img {
+  /* Ensure the image resizes proportionally */
+  width: 100%;
+  height: auto;
+  /* Add additional styles as needed */
 }
 .add-sku {
-  margin-bottom: 20px;
+  margin-bottom: 2px; /* Reduce the bottom margin */
+  margin-top: -50px; /* Add top margin to create space */
   text-align: center;
 }
+
+.container {
+  width: 90%; /* Set container width to 90% of the viewport width */
+  max-width: 1200px; /* Limit maximum width to 1200px */
+  min-width: 320px; /* Set minimum width to ensure usability on small screens */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding to the container */
+  box-sizing: border-box; /* Include padding and border in the total width */
+}
+
 h1 {
   margin-top: 0px;
   color: #470255;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.249);
-  font-size: 40px;
+ 
+  
 }
 
 /*תיבת טקסט */
@@ -40,10 +53,10 @@ h1 {
   height: 45px;
   margin-bottom: 10px;
 }
-
-.add-sku {
-  margin-bottom: 20px;
+.table-container {
+  padding: 20px;
   text-align: center;
+  
 }
 
 input[type="text"] {
@@ -58,6 +71,7 @@ input[type="text"] {
   font-size: 18px;
   font-family: Calibri
 }
+
 
 .add-sku button {
   height:45px;
@@ -79,20 +93,21 @@ input[type="text"] {
   border: 3px solid #442C5B;
 }
 
-.table-container {
-  overflow-x: auto;
+.sku-table{
+  width: 90%; /* Set container width to 90% of the viewport width */
+  max-width: 1200px; /* Limit maximum width to 1200px */
+  min-width: 320px; /* Set minimum width to ensure usability on small screens */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding to the container */
+  box-sizing: border-box; /* Include padding and border in the total width */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.sku-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
 /* שורות לבנות (החל משורה ראשונה) */
 .sku-table th,
 .sku-table td {
   padding: 10px;
-  border: 3px solid #fffcfc;
+  border: 2% solid #fffcfc;
   text-align: center;
   color: #000; /* Ensures text color is black */
   font-size: 18px;
@@ -103,8 +118,7 @@ input[type="text"] {
   background-color: #DAE7EB;
   font-weight: bold;
   color: #000; /* Ensures text color is black */
-  font-size: 20px;
-  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.132); 
+  font-size: 20px; 
 }
 /* שורות אפורות */
 .sku-table tbody tr:nth-child(even) {
@@ -124,7 +138,6 @@ input[type="text"] {
   cursor: pointer;
   text-align: center;
   font-size: 18px;
-  font-family: Calibri
 }
 
 .export-btn:hover {
