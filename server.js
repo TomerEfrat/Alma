@@ -55,28 +55,52 @@ app.post("/delete", async (req, res) => {
 });
 
 app.post("/updateDateOrder", async (req, res) => {
-   const ordered = req.body.dateOrderChecked;
-   const  id = req.body.updatedskuId;
-   const order_date = new Date();
-   try {
-     await db.query("UPDATE sku_tracking SET ordered = $1, order_date = $2 WHERE id = $3", [ordered,order_date, id,]);
-     res.redirect("/");
-   } catch (err) {
-     console.log(err);
-   }
-});
-
-app.post("/updateDateArrival", async (req, res) => {
-  const arrived  = req.body.dateArrivalChecked;
-  const  id = req.body.updatedskuId2;
-  const arrival_date = new Date();
+  const ordered = req.body.dateOrderChecked;
+  const  id = req.body.updatedskuId;
+  const order_date = new Date();
   try {
-    await db.query("UPDATE sku_tracking SET arrived = $1, arrival_date = $2 WHERE id = $3", [arrived,arrival_date, id,]);
+    await db.query("UPDATE sku_tracking SET ordered = $1, order_date = $2 WHERE id = $3", [ordered,order_date, id,]);
     res.redirect("/");
   } catch (err) {
     console.log(err);
   }
 });
+
+app.post("/deleteDateOrder", async (req, res) => {
+ const id = req.body.updatedskuId;
+ try {
+   await db.query("UPDATE sku_tracking SET ordered = false, order_date = NULL WHERE id = $1", [id]);
+   res.sendStatus(200);
+ } catch (err) {
+   console.log(err);
+   res.status(500).send("Error deleting order date.");
+ }
+});
+
+
+app.post("/updateDateArrival", async (req, res) => {
+ const arrived  = req.body.dateArrivalChecked;
+ const  id = req.body.updatedskuId2;
+ const arrival_date = new Date();
+ try {
+   await db.query("UPDATE sku_tracking SET arrived = $1, arrival_date = $2 WHERE id = $3", [arrived,arrival_date, id,]);
+   res.redirect("/");
+ } catch (err) {
+   console.log(err);
+ }
+});
+
+app.post("/deleteDate", async (req, res) => {
+ const id = req.body.updatedskuId2;
+ try {
+   await db.query("UPDATE sku_tracking SET arrived = false, arrival_date = NULL WHERE id = $1", [id]);
+   res.sendStatus(200);
+ } catch (err) {
+   console.log(err);
+   res.status(500).send("Error deleting date.");
+ }
+});
+
 
 app.listen(port, () => {
    console.log(`Server running on port ${port}`);

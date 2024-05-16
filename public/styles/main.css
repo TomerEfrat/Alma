@@ -6,8 +6,7 @@ body {
 /* Header */
 header {
   position: relative;
-  width: 100vw;
-  height:350px;
+  height: 200px;
 }
 
 header img {
@@ -18,7 +17,12 @@ header img {
   height: 100%;
   object-fit: cover; /* Ensure the image covers the entire header */
 }
-
+.table-container {
+  max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
 .add-sku {
   margin-bottom: 20px;
   text-align: center;
