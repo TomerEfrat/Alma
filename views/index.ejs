@@ -1,15 +1,15 @@
 <%- include('partials/header.ejs'); -%>
-<div class="container"></div>
+
   <div class="add-sku">
-    <h1 style="font-family:'Rubik'; font-size: 30px; text-decoration-line: underline;">מערכת למעקב חוסרים</h1>
+    <h1 style="font-family: Assistant, sans-serif; font-weight:Bold 700; text-decoration-line: underline;">מערכת למעקב חוסרים</h1>
     <form class="box" action="/add" method="post">
       <input type="text" id="skuInput" name="newSku" placeholder="נא הזן מק''ט כאן" oninput="toggleButton()" autocomplete="off">
       <button class="addbtn" type="submit" id="addBtn" onclick="checkInput()">הוסף מק"ט לרשימה</button>
     </form>
   </div>
 
-  <div class="table-container">
-    <table class="sku-table">
+  
+    <table class="sku-table" style="margin-bottom: 1%;">
       <thead>
         <tr>
           <th>מק"ט</th>
@@ -65,12 +65,12 @@
         </tr>
         <% } %>
         <td>
-          <button class="export-btn" onclick="exportToExcel()">Export to Excel</button>
-        </td> 
-      </tbody>
+      </tbody> 
     </table>
-  </div>
-</div>
+  <div class="export-button-container">  
+    <button class="export-btn" onclick="exportToExcel()">Export to Excel</button>
+  </div>        
+
 
 <%- include('partials/footer.ejs'); -%>
 
