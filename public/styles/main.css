@@ -88,6 +88,7 @@ input[type="text"] {
   padding: 10px; /* Add padding to the container */
   box-sizing: border-box; /* Include padding and border in the total width */
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   
 }
 
