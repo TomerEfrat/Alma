@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(/assets/home.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px; 
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.dep-col{
+    flex-basis: 31%;
+    display: inline-block;
+    background: #fff3f3c5;
+    text-decoration: none;
+    font-size: 28px;
+    color:black;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding:20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.dep-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+@media(max-width:700px){
+    .text-box h1{
+        font-size: 36px; 
+    }
+    .row{
+        flex-direction: column;
+    }
+}
+
+.dep1-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep1.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #442C5B;
+}
+.dep1-header h1{
+    padding-top: 100px;
+    padding-bottom: 15px;
+    font-size: 62px; 
+}
+.dep1-header h3{
+    font-size: 36px; 
+}
+@media(max-width: 700px){
+    .dep1-header{
+        height: 50vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep1phone.jpg);
+    }
+    .dep1-header h1 {
+        padding-top: 20px;      
+        font-size: 36px;
+    }
+    .dep1-header h3{
+        font-size: 22px; 
+    }
+}
+
+.department1{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px ; 
+}
+
+.add-sku{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    padding-bottom: 40px;
+    justify-content:center;  
+}
+
+.red-btn{
+    border: 1px solid #f44336;
+    background: transparent;
+    color: #f44336;
+
+}
+.red-btn:hover{
+    color:#fff ;
+}
+.add-sku input{
+    width:45%;
+    padding: 10px;
+    margin: 10px 20px ;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: #f0f0f0;
+}
+.add-sku button{
+    margin: 10px 0;
+    
+}
+.sku-table{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in the total width */
+    font-size: 0.9em;
+    overflow-x:auto;
+  }
+  /* שורות*/
+.sku-table th,
+.sku-table td {
+    padding: 12px 15px;
+    border: 3% solid #fffcfc;
+    text-align: center;
+    color: #000; /* Ensures text color is black */
+    font-size: 14px;
+  }
+  .sku-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+  }
+  .sku-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+    
+  }
+  
+  /* שורת כותרות */
+  .sku-table th {
+    background-color: #DAE7EB;
+    font-weight: bold;
+    color: #000; /* Ensures text color is black */
+    font-size: 18px; 
+  }
+.export-btn{
+    padding-top: 20px
+  
+    
+}
+.dep2-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep2.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #442C5B;
+}
+.dep2-header h1{
+    padding-top: 100px;
+    padding-bottom: 15px;
+    font-size: 62px; 
+}
+.dep2-header h3{
+    font-size: 36px; 
+}
+@media(max-width: 700px){
+    .dep2-header{
+        height: 50vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep2phone.jpg);
+    }
+    .dep2-header h1 {      
+        font-size: 36px;
+        padding-top: 20px;
+    }
+    .dep2-header h3{
+        font-size: 22px; 
+    }
+}
+.dep3-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep3.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #442C5B;
+}
+.dep3-header h1{
+    padding-top: 100px;
+    padding-bottom: 15px;
+    font-size: 62px; 
+}
+.dep3-header h3{
+    font-size: 36px; 
+}
+@media(max-width: 700px){
+    .dep3-header{
+        height: 50vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep3phone.jpg);
+    }
+    .dep3-header h1 {      
+        font-size: 36px;
+        padding-top: 20px;
+    }
+    .dep3-header h3{
+        font-size: 22px; 
+    }
+}
+@media(max-width: 700px){
+    .sku-table{
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        box-sizing: border-box; /* Include padding and border in the total width */
+        font-size: 0.9em;
+        overflow-x:auto;   
+    }
+}
