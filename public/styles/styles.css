@@ -95,7 +95,7 @@
         background-image:url(/assets/dep1phone.jpg);
     }
     .dep1-header h1 {
-        padding-top: 25px;      
+        padding-top: 50px;      
         font-size: 36px;
     }
     .dep1-header h3{
@@ -204,7 +204,7 @@
     }
     .dep2-header h1 {      
         font-size: 36px;
-        padding-top: 25px;
+        padding-top: 50px; 
     }
     .dep2-header h3{
         font-size: 22px; 
@@ -233,7 +233,7 @@
     }
     .dep3-header h1 {      
         font-size: 36px;
-        padding-top: 25px;
+        padding-top: 50px; 
     }
     .dep3-header h3{
         font-size: 22px; 
