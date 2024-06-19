@@ -92,12 +92,10 @@
 }
 @media(max-width: 700px){
     .dep1-header{
-        height: 50vh;
-        width: 100%;
-        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep1phone.jpg);
+        background-image:url(/assets/dep1phone.jpg);
     }
     .dep1-header h1 {
-        padding-top: 20px;      
+        padding-top: 25px;      
         font-size: 36px;
     }
     .dep1-header h3{
@@ -112,14 +110,16 @@
     padding-top: 20px ; 
 }
 
+
 .add-sku{
-    width: 90%;
+    width: 100%;
     margin: auto;
     text-align: center;
     cursor: pointer;
     display: flex;
     padding-bottom: 40px;
-    justify-content:center;  
+    justify-content:center; 
+    overflow-x: auto; 
 }
 
 .red-btn{
@@ -152,33 +152,33 @@
     font-size: 0.9em;
     overflow-x:auto;
   }
+    /* שורת כותרות */
+.sku-table th {
+        background-color: #DAE7EB;
+        font-weight: bold;
+        color: #000; /* Ensures text color is black */
+        font-size: 18px;  
+        height: 2em;      
+}
+
   /* שורות*/
 .sku-table th,
 .sku-table td {
-    padding: 12px 15px;
+    padding: 12px 12px;
     border: 3% solid #fffcfc;
     text-align: center;
     color: #000; /* Ensures text color is black */
     font-size: 14px;
-  }
-  .sku-table tbody tr{
+}
+.sku-table tbody tr{
     border-bottom: 1px solid #dddddd;
-  }
+}
   .sku-table tbody tr:nth-of-type(even){
-    background-color: #f3f3f3;
-    
-  }
-  
-  /* שורת כותרות */
-  .sku-table th {
-    background-color: #DAE7EB;
-    font-weight: bold;
-    color: #000; /* Ensures text color is black */
-    font-size: 18px; 
-  }
+    background-color: #f3f3f3;   
+}  
+
 .export-btn{
-    padding-top: 20px
-  
+    padding-top: 20px 
     
 }
 .dep2-header{
@@ -199,14 +199,12 @@
     font-size: 36px; 
 }
 @media(max-width: 700px){
-    .dep2-header{
-        height: 50vh;
-        width: 100%;
-        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep2phone.jpg);
+    .dep2-header{ 
+        background-image: url(/assets/dep2phone.jpg);
     }
     .dep2-header h1 {      
         font-size: 36px;
-        padding-top: 20px;
+        padding-top: 25px;
     }
     .dep2-header h3{
         font-size: 22px; 
@@ -231,13 +229,11 @@
 }
 @media(max-width: 700px){
     .dep3-header{
-        height: 50vh;
-        width: 100%;
-        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151)),url(/assets/dep3phone.jpg);
+        background-image:url(/assets/dep3phone.jpg);
     }
     .dep3-header h1 {      
         font-size: 36px;
-        padding-top: 20px;
+        padding-top: 25px;
     }
     .dep3-header h3{
         font-size: 22px; 
@@ -245,11 +241,8 @@
 }
 @media(max-width: 700px){
     .sku-table{
-        width: 90%;
-        margin: auto;
         text-align: center;
-        box-sizing: border-box; /* Include padding and border in the total width */
-        font-size: 0.9em;
-        overflow-x:auto;   
+        overflow-x:auto; 
+        display: block; 
     }
 }
