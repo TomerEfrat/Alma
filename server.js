@@ -7,10 +7,10 @@ const port = 3000;
 
 
 const db = new pg.Client({
-  user: "out_of_stock_user",
-  host: "dpg-cpo6pbaju9rs73as5sog-a.oregon-postgres.render.com",
-  database: "out_of_stock",
-  password: "gM40GyIJEMdbDAl7kErE9dbtq9cgAahS",
+  user: "alma_db_user",
+  host: "dpg-cp255ien7f5s73fb0l10-a.frankfurt-postgres.render.com",
+  database: "alma_db",
+  password: "YcKw6ps7C8J2NDUSPczmoGTgzedXzdJt",
   port: 5432,
   ssl: { rejectUnauthorized: false }
 });
