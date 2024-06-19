@@ -92,7 +92,8 @@
 }
 @media(max-width: 700px){
     .dep1-header{
-        background-image:url(/assets/dep1phone.jpg);
+        height: 30vh;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151));
     }
     .dep1-header h1 {
         padding-top: 50px;      
@@ -200,7 +201,8 @@
 }
 @media(max-width: 700px){
     .dep2-header{ 
-        background-image: url(/assets/dep2phone.jpg);
+        height: 30vh;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151));
     }
     .dep2-header h1 {      
         font-size: 36px;
@@ -229,7 +231,8 @@
 }
 @media(max-width: 700px){
     .dep3-header{
-        background-image:url(/assets/dep3phone.jpg);
+        height: 30vh;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.151),rgba(4, 9, 30, 0.151));
     }
     .dep3-header h1 {      
         font-size: 36px;
@@ -238,6 +241,7 @@
     .dep3-header h3{
         font-size: 22px; 
     }
+
 }
 @media(max-width: 700px){
     .sku-table{
