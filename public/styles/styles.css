@@ -133,7 +133,7 @@
     color:#fff ;
 }
 .add-sku input{
-    width:45%;
+    width:55%;
     padding: 10px;
     margin: 10px 20px ;
     box-sizing: border-box;
@@ -146,7 +146,7 @@
     
 }
 .sku-table{
-    width: 90%;
+    width: 100%;
     margin: auto;
     text-align: center;
     box-sizing: border-box; /* Include padding and border in the total width */
